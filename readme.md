@@ -1,6 +1,4 @@
-Absolutely, let's go step by step from scratch — **like you're doing this for the first time**.
-
----
+ 
 
 ## 🗂️ Step 1: Create Your Project Folder
 
@@ -14,13 +12,13 @@ Absolutely, let's go step by step from scratch — **like you're doing this for 
 
 Your folder should contain:
 
-| File Name                  | Description                                    |
-| -------------------------- | ---------------------------------------------- |
-| `send_emails.py`           | Main Python script you'll run                  |
-| `contacts.csv`             | List of recipients (name, email, company)      |
-| `robowars_brochure.pdf`    | Attachment 1                                   |
-| `sponsorship_proposal.pdf` | Attachment 2                                   |
-| `credentials.json`         | Gmail API credentials you download from Google |
+| File Name                  | Description                                         |
+| -------------------------- | --------------------------------------------------- |
+| `send_emails.py`           | Main Python script you'll run                       |
+| `contacts.csv`             | List of recipients (name, email, company)           |
+| `robowars_brochure.pdf`    | Attachment 1                                        |
+| `sponsorship_proposal.pdf` | Attachment 2                                        |
+| `credentials.json`         | Gmail API credentials you will download from Google |
 
 ---
 
@@ -65,7 +63,7 @@ pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-
 
 ## 🧾 Step 6: Python Script (`send_emails.py`)
 
-Edit this file according to the contents that you want to share. i wanted to add 2 more attatchments, so i have written the code as such. feel free to modify the code as per your needs.
+Edit this file according to the contents of the mail and what you want to share. i wanted to add 2 more attatchments, so i have written the code as such. feel free to modify the code as per your needs.
 
 ## ▶️ Step 7: Run It!
 
@@ -77,7 +75,4 @@ python send_emails.py
 ```
 
 👉 On first run, a browser will open to authenticate your Gmail. Just log in and approve.
-
----
-
-Let me know when you're ready, and I can help you test it on dummy emails.
+ 
