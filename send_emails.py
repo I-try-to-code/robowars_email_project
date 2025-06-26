@@ -27,37 +27,64 @@ def gmail_authenticate():
             token.write(creds.to_json())
     return build('gmail', 'v1', credentials=creds)
 
-def create_message(recipient, recipient_name, company_name):
+def create_message(to, name, company):
     msg = EmailMessage()
-    msg['To'] = recipient
-    msg['From'] = "me"
-    msg['Subject'] = "Robowars Sponsorship 2025 - VIT Vellore"
+    msg['To'] = to
+    msg['From'] = 'me'
     msg['Cc'] = CC_EMAIL
+    msg['Subject'] = f"Sponsorship Opportunity – RoboWars 2025 ({company})"
 
-    body = f"""
-Respected {recipient_name},
+    # --- HTML Email Body ---
+    html_body = f"""
+    <html>
+    <body>
+    <p>Respected {name},</p>
 
-We, RoboVITics, the premier robotics club of VIT Vellore, invite {company_name} to partner with us as a sponsor for Robowars 2025 — the flagship combat robotics event of GraVITas, VIT’s annual technical fest — scheduled during September 2025, with a footfall of over 40,000.
+    <p>
+    We, RoboVITics — the premier robotics club of VIT Vellore — invite 
+ {company} to partner with us as a sponsor for </strong>RoboWars 2025, the 
+    flagship combat robotics event of GraVITas</strong>, VIT’s annual technical fest, scheduled for 
+ September 2025 with an expected </strong>footfall of over 40,000.</strong>
+    </p>
 
-Robowars is South India’s largest combat robotics competition, where custom-built robots weighing 8 kg, 15 kg, and 60 kg battle in an arena designed for high-intensity action. The event attracts extensive media coverage, and participation from top engineering teams nationwide.
+    <p>
+    </strong>RoboWars</strong> is South India’s largest combat robotics competition, where custom-built robots 
+    weighing </strong>8 kg, 15 kg, and 60 kg</strong> battle in a high-intensity arena. 
+    The event draws extensive media coverage and participation from top engineering teams 
+    across the nation.
+    </p>
 
-With participants from top engineering colleges nationwide, Robowars offers your brand unparalleled visibility among a diverse, tech-savvy audience. It’s a unique opportunity to showcase your brand on multiple media channels and engage with future innovators and decision-makers.
+    <p>
+    With participants from leading engineering colleges, RoboWars offers your brand 
+ unparalleled visibility among a diverse, tech-savvy audience. This is a unique opportunity to 
+    showcase your brand across multiple media platforms and connect with future 
+    innovators and decision-makers.
+    </p>
 
-We have attached the sponsorship brochures outlining the benefits of collaboration. We’d love to discuss how we can collaborate. Please let us know a convenient time for a meeting.
+    <p>
+    We have attached our sponsorship brochures outlining the benefits of collaboration. 
+    We’d be happy to discuss how we can work together. Kindly let us know a convenient 
+    time for a meeting.
+    </p>
 
-Best regards,
-RoboVITics
-VIT Vellore
- 
-"""
+    <p>
+    Best regards,<br>
+ RoboVITics<br>
+    VIT Vellore
+    </p>
+    </body>
+    </html>
+    """
 
-    msg.set_content(body)
+    # --- Use HTML body ---
+    msg.set_content("This is an HTML email. Please view it in an HTML-compatible mail client.")
+    msg.add_alternative(html_body, subtype='html')
 
-    for filepath in ATTACHMENTS:
-        with open(filepath, 'rb') as f:
-            file_data = f.read()
-            file_name = os.path.basename(filepath)
-            msg.add_attachment(file_data, maintype='application', subtype='octet-stream', filename=file_name)
+    # --- Add attachments ---
+    for file in ATTACHMENTS:
+        with open(file, 'rb') as f:
+            data = f.read()
+            msg.add_attachment(data, maintype='application', subtype='octet-stream', filename=os.path.basename(file))
 
     return {'raw': base64.urlsafe_b64encode(msg.as_bytes()).decode()}
 
