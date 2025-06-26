@@ -41,10 +41,10 @@ def create_message(to, name, company):
     <p>Respected {name},</p>
 
     <p>
-    We, RoboVITics — the premier robotics club of VIT Vellore — invite 
- {company} to partner with us as a sponsor for </strong>RoboWars 2025, the 
+    We, RoboVITics, the premier robotics club of VIT Vellore invite 
+    {company} to partner with us as a sponsor for </strong>RoboWars 2025, the 
     flagship combat robotics event of GraVITas</strong>, VIT’s annual technical fest, scheduled for 
- September 2025 with an expected </strong>footfall of over 40,000.</strong>
+    September 2025 with an expected </strong>footfall of over 40,000.</strong>
     </p>
 
     <p>
@@ -56,7 +56,7 @@ def create_message(to, name, company):
 
     <p>
     With participants from leading engineering colleges, RoboWars offers your brand 
- unparalleled visibility among a diverse, tech-savvy audience. This is a unique opportunity to 
+    unparalleled visibility among a diverse, tech-savvy audience. This is a unique opportunity to 
     showcase your brand across multiple media platforms and connect with future 
     innovators and decision-makers.
     </p>
@@ -69,7 +69,7 @@ def create_message(to, name, company):
 
     <p>
     Best regards,<br>
- RoboVITics<br>
+    RoboVITics<br>
     VIT Vellore
     </p>
     </body>
