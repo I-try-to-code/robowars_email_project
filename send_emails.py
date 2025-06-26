@@ -32,7 +32,7 @@ def create_message(to, name, company):
     msg['To'] = to
     msg['From'] = 'me'
     msg['Cc'] = CC_EMAIL
-    msg['Subject'] = f"Sponsorship Opportunity – RoboWars 2025 ({company})"
+    msg['Subject'] = f" Robowars Sponsorship 2025 - VIT Vellore "
 
     # --- HTML Email Body ---
     html_body = f"""
@@ -42,14 +42,14 @@ def create_message(to, name, company):
 
     <p>
     We, RoboVITics, the premier robotics club of VIT Vellore invite 
-    {company} to partner with us as a sponsor for </strong>RoboWars 2025, the 
+    {company} to partner with us as a sponsor for <strong>RoboWars 2025, the 
     flagship combat robotics event of GraVITas</strong>, VIT’s annual technical fest, scheduled for 
-    September 2025 with an expected </strong>footfall of over 40,000.</strong>
+    September 2025 with an expected <strong>footfall of over 40,000.</strong>
     </p>
 
     <p>
-    </strong>RoboWars</strong> is South India’s largest combat robotics competition, where custom-built robots 
-    weighing </strong>8 kg, 15 kg, and 60 kg</strong> battle in a high-intensity arena. 
+    <strong>RoboWars</strong> is South India’s largest combat robotics competition, where custom-built robots 
+    weighing <strong>8 kg, 15 kg, and 60 kg</strong> battle in a high-intensity arena. 
     The event draws extensive media coverage and participation from top engineering teams 
     across the nation.
     </p>
